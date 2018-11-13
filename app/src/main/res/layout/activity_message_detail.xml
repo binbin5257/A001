@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color">
+        <include
+            layout="@layout/top_bar"/>
+        <TextView
+            android:id="@+id/title"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="为了您的爱车健康行驶，您的车辆已行驶满5000公里，请对车辆进行常规保养，描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:layout_marginTop="18dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="为了您的爱车健康行驶，您的车辆已行驶满5000公里，请对车辆进行常规保养，描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述"
+            android:textColor="@color/white"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:maxLength="240"/>
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="20190625 14:30"
+            android:paddingLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/white"
+            android:gravity="right"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</layout>

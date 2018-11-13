@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+
+        />
+    <LinearLayout
+        android:id="@+id/ll_add_pic"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+
+        >
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_add_pic">
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FFBFBFBF"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#FFBFBFBF"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="添加照片"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:gravity="center_horizontal"
+            android:textColor="#FFCBCBCB"
+            />
+    </LinearLayout>
+</RelativeLayout>

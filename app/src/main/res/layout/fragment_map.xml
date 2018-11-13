@@ -1,0 +1,47 @@
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    tools:context="cn.lds.amap.MapFragment">
+
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/map_search"/>
+
+        <TextView
+            android:id="@+id/map_search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:background="#cbcbcb"
+            android:gravity="right|center"
+            android:text="search"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/map_search"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/map_search"
+            android:layout_marginBottom="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/collect_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/ic_launcher"
+                android:gravity="center"
+                android:scaleType="center"
+                android:text="收藏"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

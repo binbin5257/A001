@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pull to refresh IDs (上拉下拉刷新) -->
+    <item name="scrollview" type="id"/>
+</resources>

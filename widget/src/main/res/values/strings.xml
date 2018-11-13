@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- 下拉刷新 -->
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="pullup_to_load_no_data">没有更多数据</string>
+    <string name="loading">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+    <string name="not_updated_yet">暂未更新过</string>
+    <string name="updated_at">上次更新于%1$s前</string>
+    <string name="updated_just_now">刚刚更新</string>
+    <string name="time_error">时间有问题</string>
+
+
+    <!-- Pull to refresh (上拉下拉刷新) -->
+    <string name="pull_to_refresh_pull_label">下拉加载更多聊天记录…</string>
+    <string name="pull_to_refresh_release_label">松手加载…</string>
+    <string name="pull_to_refresh_refreshing_label">载入中…</string>
+
+    <!-- Just use standard Pull Down String when pulling up. These can be set for languages which require it -->
+    <string name="pull_to_refresh_from_bottom_pull_label">加载更多…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">松手加载…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">加载中…</string>
+    <string name="vertify_access">验证通过,耗时%d毫秒</string>
+    <string name="vertify_failed">验证失败,还剩%d次机会</string>
+    <string name="text_indicator">%1$d/%2$d</string>
+</resources>

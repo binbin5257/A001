@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color">
+        <include layout="@layout/top_bar"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="0.5dp">
+            <cn.lds.ui.view.ContainsEmojiEditText
+                android:id="@+id/et_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:maxLength="20"
+                android:layout_marginLeft="15dp"
+                android:background="@null"
+                android:textColor="@color/white"
+                android:hint="请输入新密码"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#2F304D"
+            android:layout_alignParentBottom="true"
+            />
+
+    </LinearLayout>
+</layout>

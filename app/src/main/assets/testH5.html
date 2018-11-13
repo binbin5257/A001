@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>彩虹H5测试页面</title>
+    <style>
+        h1{
+            background:#1f2034;
+            color:#fff;
+            padding:12px;
+            font-size:16px;/*字体大小18px*/
+            -webkit-margin-before: 0px;
+            -webkit-margin-after: 0px;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+        }
+        button{
+            margin:16px
+        }
+        body {
+            display: block;
+            margin: 0px;
+        }
+        #pic{
+            width: 200px;
+            height: 215px;
+        }
+    </style>
+    <script>
+        function back(){
+            window.WebView.closeAppWebview();
+        }
+        function takePhoto(){
+            window.WebView.takePhoto();
+        }
+
+        function getBase64ByApp(result){
+            var url = document.getElementById("imgUrl");
+            url.innerHTML = "Base64格式===" + result;
+        }
+
+        function wechatShare(type){
+            var imageUrl = "http://d.hiphotos.baidu.com/image/pic/item/b7fd5266d016092408d4a5d1dd0735fae7cd3402.jpg";
+            window.WebView.wechatShare(imageUrl,type);
+        }
+
+        function loadXml(){
+             window.alert("进入方法中")
+             var xmlDoc=getXmlDoc();
+             var root=xmlDoc.documentElement;
+        }
+        function getXmlDoc(){
+            var xmlDoc;
+            try{
+                //给IE浏览器 创建一个空的微软 XML文档对象
+                xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+              }catch(err){
+                    try{
+                    //在 Firefox及其他浏览器(opera)中的 XML解析器创建一个空的 XML文档对象。
+                    xmlDoc=document.implementation.createDocument("","",null);
+                    }catch(er){
+                        alert("所使用的浏览器版本太低了,该换更新了");
+                    }
+                }
+            //关闭异步加载，这样确保在文档完全加载之前解析器不会继续脚本的执行
+            xmlDoc.async=false;
+            //解析器加载名为 "xxx.xml" 的 XML 文档
+            xmlDoc.load("city.xml");
+            return xmlDoc;
+        }
+function loadXml(){
+window.alert("进入方法中")
+var xmlDoc=getXmlDoc();
+//获取xml文件的根节点
+var root=xmlDoc.documentElement;
+//获取xml文件的根节点下面的省节点
+var provinces=root.childNodes;
+//获取页面中要显示的省、市和县的控件dom对象
+var sheng=document.getElementById("sheng");
+window.alert(sheng)
+var shi=document.getElementById("shi");
+var xian=document.getElementById("xian");
+ //遍历所有的省
+for(var i=0;i<provinces.length;i++){
+ //查看该节点是否是元素节点 也是为了实现不同浏览器之间的兼容性 问 题(1是元素节点 Node.ELEMENT_NODE  ---1  -- 元素节点)
+if(provinces[i].nodeType==1){
+//创建一个option节点对象
+var shengopt=document.createElement("option");
+//为option省节点添加文本 shengopt.appendChild(document.createTextNode(provinces[i].getAttr ibute("name")));
+//为option省节点设置属性 shengopt.setAttribute("value",provinces[i].getAttribute("postcode "));
+  //添加省到页面dom对象中
+sheng.appendChild(shengopt);
+}
+}
+//当省节点发生改变时 触发事件
+sheng.onchange=function(){
+//获取省节点所有的option对象的集合
+var shengs=sheng.options;
+//获取选中option对象的selectedIndex(下标值)
+var num=shengs.selectedIndex;
+//清空市 区
+shi.length=0;
+xian.length=0;
+//根据选中的省获取其value值的内容 即xml文件中的postcode对应的 值
+var ppostcode=shengs[num].getAttribute("value");
+//遍历所有的省
+for(var i=0;i<provinces.length;i++){
+//查看该节点是否是元素节点 也是为了实现不同浏览器之间的兼 容性问题(1是元素节点 Node.ELEMENT_NODE  ---1  -- 元素 节点)
+if(provinces[i].nodeType==1){
+//根据省获取其postcode值的内容 即html文件中的value对应 的值
+var postcode=provinces[i].getAttribute("postcode");
+if(postcode==ppostcode){
+//获取省节点的子节点
+var cities=provinces[i].childNodes;
+//清空
+shi.length=0;
+//遍历所有的市
+for(var i=0;i<cities.length;i++){
+//查看该节点是否是元素节点 也是为了实现不同浏览 器之间的兼容性问题(1是元素节点 Node.ELEMENT_NODE  ---1  -- 元素节点)
+if(cities[i].nodeType==1){
+//创建一个option节点对象
+var shiopt=document.createElement("option");
+//为option市节点添加文本 shiopt.appendChild(document.createTextNode(cities[i].getAttribute ("name")));
+//为option市节点设置属性
+shiopt.setAttribute("value", cities[i].getAttribute("postcode"));
+ //添加市到页面dom对象中
+shi.appendChild(shiopt);
+}
+}
+break;
+}
+}
+}
+}
+//当市节点发生改变时 触发事件
+shi.onchange=function(){
+//获取市节点所有的option对象的集合
+var shis=shi.options;
+//获取选中option对象的selectedIndex(下标值)
+var num=shis.selectedIndex;
+//根据选中的市获取其value值的内容 即xml文件中的postcode对应的 值
+var spostcode=shis[num].getAttribute("value");
+//遍历所有的省
+for(var i=0;i<provinces.length;i++){
+//查看该节点是否是元素节点 也是为了实现不同浏览器之间的兼 容性问题(1是元素节点 Node.ELEMENT_NODE  ---1  -- 元素 节点)
+if(provinces[i].nodeType==1){
+//获取省节点的子节点
+var cities=provinces[i].childNodes;
+//遍历所有的市
+for(var j=0;j<cities.length;j++){
+//查看该节点是否是元素节点 也是为了实现不同浏览器之 间的兼容性问题(1是元素节点 Node.ELEMENT_NODE   ---1  -- 元素节点)
+if(cities[j].nodeType==1){
+//根据市获取其postcode值的内容 即html文件中的 value对应的值
+var postcode=cities[j].getAttribute("postcode");
+if(postcode==spostcode){
+//清空
+xian.length=0;
+//获取市节点的子节点
+var areas=cities[j].childNodes;
+//遍历所有的区(县)
+for(var k=0;k<areas.length;k++){
+//查看该节点是否是元素节点 也是为了实现不 同浏览器之间的兼容性问题(1是元素节点 Node.ELEMENT_NODE  ---1  -- 元素节点)
+if(areas[k].nodeType==1){
+//创建一个option节点对象
+var xianopt=document.createElement("option");
+//为option区节点添加文本
+xianopt.appendChild(document.createTextNode(areas[k].getAttribute ("name")));
+//为option区节点设置属性
+xianopt.setAttribute("value", areas[k].getAttribute("postcode"));
+ //添加区到页面dom对象中
+xian.appendChild(xianopt);
+}
+}
+break;
+}
+}
+}
+}
+}
+}
+}
+}
+
+
+
+
+
+    </script>
+</head>
+<body>
+<h1 align="center">彩虹H5测试页面</h1>
+<div><button id="back" onclick="back()">返回首页</button></div>
+<div><button id="takePhoto" onclick="takePhoto()">调用相机</button></div>
+<div><button id="wx-friend" onclick="wechatShare(0)">分享到朋友圈子</button></div>
+<div><button id="send-friend" onclick="wechatShare(1)">发送给好友</button></div>
+<div><button id="xml-test" onclick="loadXml()">读取xml</button></div>
+
+
+<div>
+  <span>
+   <select id="sheng" style="width: 100px"></select>
+  </span>
+    <span>
+   <select id="shi" style="width: 100px"></select>
+  </span>
+    <span>
+   <select id="xian" style="width: 100px"></select>
+  </span>
+</div>
+</body>
+</body>
+</html>

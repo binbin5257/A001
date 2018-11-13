@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:id="@+id/main_view">
+        <include layout="@layout/top_bar"
+            android:id="@+id/top_bar"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_sms_ver"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_bar"
+            >
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请设置4位数字PIN码"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <cn.lds.widget.PwdEditText
+                android:id="@+id/pin_code"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:background="@color/bg_color"
+                android:cursorVisible="false"
+                android:enabled="true"
+                android:focusable="true"
+                android:layout_below="@+id/text"
+                android:maxLength="4"
+                android:layout_marginTop="30dp"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

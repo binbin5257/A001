@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#fff</color>
+    <color name="gray_text">#6B6B6B</color>
+    <color name="black">#000000</color>
+
+    <color name="line_color">#2F304D</color>
+    <color name="content_background">#f2f2f2</color>
+    <color name="bg_color">#121420</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="page_colorPrimary">#3F51B5</color>
+    <color name="page_colorPrimaryDark">#303F9F</color>
+    <color name="page_colorAccent">#FF4081</color>
+    <color name="page_loop_bottom">#a0a1a1a1</color>
+    <color name="page_white">#ffffff</color>
+    <color name="page_gray_ff">#ded2d2</color>
+    <color name="page_gray_cc">#cccccc</color><!--灰色cc -->
+    <color name="page_gray_cccc">#b0cccccc</color><!--灰色cc -->
+    <color name="page_black_cc">#b01a1a1a</color><!--灰色cc -->
+    <color name="btn_confirm_normal">#ff0cc8d1</color>
+    <color name="btn_confirm_pressed">#0BA5AD</color>
+</resources>

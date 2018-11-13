@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="cn.lds.ui.SettingActivity"
+        android:background="@color/bg_color">
+
+        <include layout="@layout/top_bar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <cn.lds.widget.CommonLayout
+                android:id="@+id/update_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:content=""
+                app:contentMaxLength="11"
+                app:iconVisiblity="false"
+                app:inputType="number"
+                app:name="账号与安全"
+                app:nameColor="@color/white"
+                android:layout_marginTop="1dp"
+                app:arrowRightVisiblity="true"
+                />
+
+            <cn.lds.widget.CommonLayout
+                android:id="@+id/feedback_llyt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:content=""
+                app:contentMaxLength="11"
+                app:iconVisiblity="false"
+                app:inputType="number"
+                app:nameColor="@color/white"
+                app:name="帮助与服务"
+                app:arrowRightVisiblity="true"
+                />
+
+            <cn.lds.widget.CommonLayout
+                android:id="@+id/about_llyt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:content=""
+                app:contentMaxLength="11"
+                app:iconVisiblity="false"
+                app:inputType="number"
+                app:name="关于"
+                app:nameColor="@color/white"
+                app:arrowRightVisiblity="true"
+                />
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_margin="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="0"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_red"
+            android:text="退出登录"/>
+
+    </LinearLayout>
+</layout>

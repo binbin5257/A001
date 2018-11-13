@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="cn.lds.ui.PoiLocatedActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:background="@color/top_bar_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/top_back_iv"
+                android:layout_width="@dimen/top_bar_height"
+                android:layout_height="@dimen/top_bar_height"
+                android:scaleType="centerInside"
+                android:src="@drawable/top_back"/>
+
+
+            <RelativeLayout
+                android:id="@+id/poi_input_rllt"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_rect_corners_gray">
+
+                <LinearLayout
+                    android:id="@+id/top_menu_lyt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#FF60627E"/>
+
+                    <ImageView
+                        android:id="@+id/top_menu_iv"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/navi_poi_search"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/map_search_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="12dp"
+                    android:layout_toLeftOf="@+id/top_menu_lyt"
+                    android:background="@null"
+                    android:ellipsize="middle"
+                    android:gravity="left|center_vertical"
+                    android:imeOptions="actionSearch"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.amap.api.maps.TextureMapView
+                android:id="@+id/mapview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/more_list"
+                android:layout_width="match_parent"
+                android:layout_height="311dp"
+                android:scrollbars="none"
+                android:visibility="gone"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/poi_list"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:layout_gravity="bottom"
+                android:scrollbars="none"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/single_poi_llyt"
+                android:layout_width="match_parent"
+                android:layout_height="134dp"
+                android:layout_gravity="bottom"
+                android:background="#ff44455d"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/poi_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lines="1"
+                    android:text="洪湖大厦（公司）"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/poi_km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="距您21km"
+                        android:textColor="#ffffffff"
+                        android:textSize="14dp"
+                        />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="#1affffff"/>
+
+                    <TextView
+                        android:id="@+id/poi_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="萧山区洪湖路26号"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="13dp"
+                    android:background="#1affffff"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/poi_located_collect_llyt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/map_search_collect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/map_search_collect"
+                            android:button="@null"
+                            android:checked="false"
+                            android:clickable="false"
+                            android:focusable="false"/>
+
+                        <TextView
+                            android:id="@+id/map_search_collect_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="收藏"
+                            android:textColor="#1affffff"
+                            android:textSize="14sp"
+                            />
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+
+                            android:id="@+id/poi_located_post_poi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/map_search_post_poi"
+                            android:text="发送至车辆"
+                            android:drawablePadding="4dp"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"/>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

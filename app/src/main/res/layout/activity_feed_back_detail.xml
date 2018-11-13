@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="cn.lds.ui.FeedBackDetailActivity"
+        android:background="@color/bg_color">
+
+        <include layout="@layout/top_bar"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_rect_corners_list">
+                    <TextView
+                        android:id="@+id/content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"/>
+                    <cn.lds.ui.view.MyGridView
+                        android:id="@+id/grid_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:columnWidth="60dp"
+                        android:horizontalSpacing="8dp"
+                        android:verticalSpacing="8dp"
+                        android:numColumns="3"
+                        android:listSelector="@android:color/transparent"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/creat_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:gravity="right"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp"
+                    />
+                <TextView
+                    android:id="@+id/tsp_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rect_corners_list"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/white"
+                    android:padding="10dp"/>
+                <TextView
+                    android:id="@+id/reply_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:gravity="right"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="30dp"
+                    android:textColor="@color/text_gray"/>
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+    </LinearLayout>
+</layout>

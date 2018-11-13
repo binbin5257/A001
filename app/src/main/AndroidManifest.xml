@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.lds">
+
+    <!-- Required -->
+    <permission
+        android:name="${applicationId}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+
+    <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ImageTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.DbTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MapActivity"
+            android:label="@string/title_activity_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <!-- Rich push 核心功能 since 2.0.6 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle" />
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".receiver.LogoutReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.cusc.lieparrdcar.logout" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </service>
+
+        <!-- since 3.1.0 Required SDK 核心功能 -->
+        <provider
+            android:name="cn.jpush.android.service.DownloadProvider"
+            android:authorities="${applicationId}.DownloadProvider"
+            android:exported="true" />
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- User defined.  For test only  用户自定义的广播接收器 -->
+        <receiver
+            android:name=".jpush.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ***********************高德地图************************ -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="2da097482073f96964abaaef15ed814a" />
+
+        <activity
+            android:name=".ui.VoiceRecordActivity"
+            android:label="@string/title_activity_voice_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.VoiceListActivity"
+            android:label="@string/title_activity_voice_list"
+            android:parentActivityName=".common.base.BaseActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cn.lds.common.base.BaseActivity" />
+        </activity>
+        <activity
+            android:name=".ui.CarControlActivity"
+            android:label="@string/title_activity_car_control"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CarListActivity"
+            android:label="@string/title_activity_car_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.TripListActivity"
+            android:label="@string/title_activity_trip_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ControlHistoryListActivity"
+            android:label="@string/title_activity_control_history_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CarDetailActivity"
+            android:label="@string/title_activity_control_history_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.FeedBackActivity"
+            android:label="@string/title_activity_feed_back"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 修改密码页面 -->
+        <activity
+            android:name=".ui.UpdatePasswordActivity"
+            android:label="@string/title_activity_setting"
+            android:screenOrientation="portrait" />
+        <!-- 忘记密码页面 -->
+        <activity
+            android:name=".ui.ForgetPasswordActivity"
+            android:label="@string/title_activity_setting"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.FeedBackListActivity" />
+        <activity
+            android:name=".ui.FeedBackDetailActivity"
+            android:label="@string/title_activity_feed_back_detail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CollectionsActivity"
+            android:label="@string/title_activity_collections"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MapSearchActivity"
+            android:label="@string/title_activity_map_search"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.DealerListActivity"
+            android:label="@string/title_activity_dealer_list"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.TripDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.WebHostActivity"
+            android:screenOrientation="portrait" />
+        <!-- 彩虹H5页面 -->
+        <!-- <activity -->
+        <!-- android:name=".ui.WebviewActivity" -->
+        <!-- android:screenOrientation="portrait"> -->
+        <!-- </activity> -->
+        <!-- 账户安全 -->
+        <activity
+            android:name=".ui.AccountSecurityActivity"
+            android:screenOrientation="portrait" />
+        <!-- 验证登录密码 -->
+        <activity
+            android:name=".ui.VerificationLoginPswdActivity"
+            android:screenOrientation="portrait" />
+        <!-- 设置PIN码 -->
+        <activity
+            android:name=".ui.SettingPinActivity"
+            android:screenOrientation="portrait" />
+        <!-- poi 定位界面 -->
+        <activity
+            android:name=".ui.PoiLocatedActivity"
+            android:screenOrientation="portrait" />
+        <!-- 消息详情 -->
+        <activity
+            android:name=".ui.MessageDetailActivity"
+            android:screenOrientation="portrait" />
+        <!-- 控车操作历史 -->
+        <activity
+            android:name=".ui.ControlHistoryActivity"
+            android:screenOrientation="portrait" />
+        <!-- 修改信息 -->
+        <activity
+            android:name=".ui.UpdateActivity"
+            android:screenOrientation="portrait" />
+        <!-- 车辆位置 -->
+        <activity
+            android:name=".ui.CarLocationActivity"
+            android:screenOrientation="portrait" />
+        <!-- 帮助与服务 -->
+        <activity
+            android:name=".ui.HelpAndServiceActivity"
+            android:screenOrientation="portrait" />
+        <!-- 寻车导航 -->
+        <activity
+            android:name=".ui.NaviActivity"
+            android:screenOrientation="portrait" />
+        <!-- 车辆体检 -->
+        <activity
+            android:name=".ui.CarInpectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.select_image.PlusImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CarInfoShowConfigActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.HomeCustomActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.WebviewActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".ui.ControlCarFailureResonActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.MapSearchListActivity" />
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <!-- <activity android:name=".ui.MessageTabActivity"></activity> -->
+        <activity
+            android:name=".ui.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CheckLoginPswActivity"
+            android:screenOrientation="portrait" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="leopaard.com.leopaardapp.file_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">猎豹车联网</string>
+    <!--activity_login-->
+    <string name="activity_login_account">用户名</string>
+    <string name="activity_login_write_account">请输入手机号</string>
+    <string name="activity_login_password">密码</string>
+    <string name="activity_forget_password_write">请输入密码</string>
+    <string name="LoginBtn">登录</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_voice_list">VoiceListActivity</string>
+    <string name="title_activity_car_control">CarControlActivity</string>
+    <string name="title_activity_car_list">CarListActivity</string>
+    <string name="title_activity_trip_list">TripListActivity</string>
+    <string name="title_activity_control_history_list">ControlHistoryListActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="setting_title">设置</string>
+    <string name="loading_waitting">请稍候</string>
+    <string name="title_activity_feed_back">FeedBackActivity</string>
+    <string name="feedback_title">意见反馈</string>
+    <string name="voicelist_title">开机提示语</string>
+    <string name="upload_feedbac_success">提交成功</string>
+
+    <string name="main_detail">首页</string>
+    <string name="main_control">车控</string>
+    <string name="main_navi">地图</string>
+    <string name="main_me">我的</string>
+    <string name="main_car_service">服务</string>
+    <string name="title_activity_feed_back_detail">FeedBackDetailActivity</string>
+    <string name="title_activity_collections">CollectionsActivity</string>
+    <string name="title_activity_map_search">MapSearchActivity</string>
+    <string name="title_activity_dealer_list">DealerListActivity</string>
+    <string name="delete_success">删除成功</string>
+    <string name="unknown_address">未知位置</string>
+    <string name="aver_text_ev">平均功耗</string>
+    <string name="aver_text_oil">平均油耗</string>
+    <string name="aver_hint_ev">kwh</string>
+    <string name="aver_hint_oil">L</string>
+    <string name="enerage_text_oil">剩余油量</string>
+    <string name="enerage_text_ev">剩余电量</string>
+    <string name="null_string">0.0</string>
+    <string name="happy_waitting">正在开发中，敬请期待</string>
+    <string name="account_security">账号与安全</string>
+    <string name="digits_password">0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string-array name="news_tab">
+        <item>活动</item>
+        <item>保养</item>
+        <item>通知</item>
+        <item>异常</item>
+    </string-array>
+</resources>

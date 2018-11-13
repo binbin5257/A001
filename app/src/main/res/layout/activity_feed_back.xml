@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="cn.lds.ui.FeedBackActivity"
+        android:background="#191925">
+
+        <include layout="@layout/top_bar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/feedback_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#2C2D43">
+
+                <EditText
+                    android:id="@+id/input_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:maxLength="140"
+                    android:textSize="14sp"
+                    android:hint="请输入您的意见和建议，我们会积极处理您的"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:background="@null"
+                    />
+
+                <TextView
+                    android:id="@+id/text_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/input_edittext"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:text="0/140"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+            <!--展示上传的图片-->
+            <GridView
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:columnWidth="60dp"
+                android:horizontalSpacing="8dp"
+                android:numColumns="3"
+                android:listSelector="@android:color/transparent"
+                android:verticalSpacing="8dp" />
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/zj"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/add_pic"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/pic_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/upload_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            android:layout_weight="0"
+            android:background="@drawable/btn_confirm"
+            android:text="提交"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rect_corners_list"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_car"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            app:viewAspectRatio="1.33"
+            app:actualImageScaleType="centerInside"
+            app:roundedCornerRadius="2dp"
+            />
+
+        <TextView
+            android:id="@+id/car_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_car"
+            android:layout_marginLeft="28dp"
+            android:layout_toRightOf="@id/iv_car"
+            android:text="猎豹CS10"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/car_lisence_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/car_model"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/iv_car"
+            android:textColor="@color/white" />
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/iv_car"
+            android:background="#24253C"/>
+
+        <TextView
+            android:id="@+id/car_is_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_marginLeft="22dp"
+            android:text="默认车辆"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/bg_selected_car_default"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:drawablePadding="10dp"
+            />
+        <TextView
+            android:id="@+id/car_editor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_marginRight="22dp"
+            android:text="编辑"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/bg_editor_car"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:drawablePadding="10dp"
+            android:layout_alignParentRight="true"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_car"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_car"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/_vin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIN"
+                android:textColor="@color/textcolor80"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/car_vin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="LN86DCBF3WL173272"
+                android:textColor="@color/textcolor80"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

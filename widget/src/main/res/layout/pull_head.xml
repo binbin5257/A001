@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 页面下拉刷新页面布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/head_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black" >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EBEBEB"
+        android:layout_below="@+id/rl"/>
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <ImageView
+                android:id="@+id/pull_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:background="@mipmap/bg_pull_icon_big2"
+                android:scaleType="fitXY"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/refreshing_icon"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:background="@mipmap/bg_pull_refreshing2"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/state_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#555555"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/state_iv"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@id/state_tv"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

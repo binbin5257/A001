@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_power"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:text="动力系统"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/icon"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/content"
+            android:text="制动系统异常，请到4S进行维修"
+            android:layout_below="@id/title"
+            android:layout_alignLeft="@+id/title"
+            android:textColor="@color/white"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp"/>
+        <cn.lds.ui.view.RatingBar
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            app:starCount="5"
+            app:starPadding="4dp"
+            app:starEmpty="@drawable/bg_star_unselect"
+            app:starFill="@drawable/bg_star_selected"
+            app:starStep="2"
+            app:stepSize="Full"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#979797"
+            android:layout_below="@id/content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

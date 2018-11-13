@@ -1,0 +1,242 @@
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    tools:context="cn.lds.amap.MapFragment">
+
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/top_bar"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_contro_car_bg"
+            android:layout_below="@+id/top_bar"
+            android:id="@+id/rl_control_waite"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tv_control_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+            <ImageView
+                android:id="@+id/loading_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_control_load"
+                android:layout_toRightOf="@id/tv_control_status"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_contro_car_bg"
+            android:layout_below="@+id/top_bar"
+            android:id="@+id/rl_control_success"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:id="@+id/iv_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_confirm_green"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"/>
+            <TextView
+                android:id="@+id/tv_control_success_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/iv_success"
+                android:layout_marginLeft="8dp"/>
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="确定"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginRight="8dp"
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_toLeftOf="@+id/tv_confirm"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_control_car_failture"
+            android:layout_below="@+id/top_bar"
+            android:id="@+id/rl_control_falture"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:id="@+id/iv_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel_red"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"/>
+            <TextView
+                android:id="@+id/tv_control_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/iv_remove"
+                android:text="鸣笛闪灯启动失败"
+                android:layout_marginLeft="8dp"/>
+            <TextView
+                android:id="@+id/see_see"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="查看"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginRight="8dp"
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_toLeftOf="@+id/see_see"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/map_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/top_bar"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_rect_corners_white">
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/navi_search"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_toLeftOf="@id/iv_search"
+                android:background="#DBDBDB"/>
+
+        </RelativeLayout>
+
+        <CheckBox
+            android:id="@+id/cb_lounk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/map_search"
+            android:layout_alignRight="@+id/map_search"
+            android:background="@drawable/bg_traffic"
+            android:button="@null"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/map_search"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/map_search"
+            android:layout_marginBottom="18dp"
+            android:orientation="vertical">
+
+
+
+            <ImageView
+                android:id="@+id/distributor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/navi_distributor"
+                />
+
+            <ImageView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/navi_location"
+                />
+
+            <ImageView
+                android:id="@+id/iv_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/navi_car"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="18dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/navi_company"
+                />
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/navi_home"
+                />
+
+
+            <ImageView
+                android:id="@+id/collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/navi_collection_folder"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

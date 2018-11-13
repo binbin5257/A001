@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <FrameLayout
+            android:id="@+id/content_flyt"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="56dp"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="bottom"
+                android:background="@color/main_radio_group_bg"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="-14dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/main_car_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawablePadding="3dp"
+                    android:drawableTop="@drawable/main_car_detail"
+                    android:gravity="center"
+                    android:text="@string/main_detail"
+                    android:textColor="@drawable/tab_textcolor"
+                    android:textSize="10sp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/main_car_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawablePadding="3dp"
+                    android:drawableTop="@drawable/main_car_control"
+                    android:gravity="center"
+                    android:text="@string/main_control"
+                    android:textColor="@drawable/tab_textcolor"
+                    android:textSize="10sp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/main_car_service"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawableTop="@drawable/main_car_service"
+                    android:singleLine="true"
+                    android:textSize="10sp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/main_car_navi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawablePadding="3dp"
+                    android:drawableTop="@drawable/main_car_navi"
+                    android:gravity="center"
+                    android:text="@string/main_navi"
+                    android:textColor="@drawable/tab_textcolor"
+                    android:textSize="10sp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/main_car_me"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:button="@null"
+                    android:drawablePadding="3dp"
+                    android:drawableTop="@drawable/main_car_me"
+                    android:gravity="center"
+                    android:text="@string/main_me"
+                    android:textColor="@drawable/tab_textcolor"
+                    android:textSize="10sp"
+                    />
+
+            </RadioGroup>
+
+        </FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_guide_home"
+            android:id="@+id/rl_home_guide"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/iv_guide_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_guide_message"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                />
+            <ImageView
+                android:id="@+id/iv_guide_car_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_guide_car_info"
+                android:layout_centerInParent="true"/>
+            <ImageView
+                android:id="@+id/iv_guide_customized"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_guide_customized"
+                android:layout_below="@+id/iv_guide_car_info"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_guide_know"
+                android:src="@drawable/bg_guide_know"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_guide_customized"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

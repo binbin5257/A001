@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cn.lds.ui.ImageTestActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/corner_image"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                app:roundWithOverlayColor="@color/black"
+                app:roundedCornerRadius="7.0dp"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/circle_image"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                app:roundAsCircle="true"/>
+
+            <FrameLayout
+                android:id="@+id/fragment_layout"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/gif_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="gif图"/>
+
+
+    </LinearLayout>
+
+</layout>

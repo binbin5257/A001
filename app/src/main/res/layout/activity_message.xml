@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+        <include layout="@layout/top_bar"/>
+
+        <cn.lds.widget.PullToRefreshLayout
+            android:layout_marginTop="1dp"
+            android:id="@+id/pull_to_refresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <include layout="@layout/pull_head"
+                />
+
+            <cn.lds.ui.view.CarControlListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"/>
+
+            <include layout="@layout/pull_up_footer"
+                />
+        </cn.lds.widget.PullToRefreshLayout>
+    </LinearLayout>
+</layout>

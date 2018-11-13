@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.amap.api.maps.TextureMapView
+            android:id="@+id/map_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include layout="@layout/top_bar"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:id="@+id/single_poi_llyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#1F2034"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                >
+
+                <TextView
+                    android:id="@+id/poi_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lines="1"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/poi_km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="#ffffffff"
+                        android:textSize="14dp"
+                        />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="#1affffff"/>
+
+                    <TextView
+                        android:id="@+id/poi_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="13dp"
+                    android:background="#1affffff"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/poi_located_collect_llyt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/map_search_collect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/map_search_collect"
+                            android:button="@null"
+                            android:checked="false"
+                            android:clickable="false"
+                            android:focusable="false"/>
+
+                        <TextView
+                            android:id="@+id/map_search_collect_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="未收藏"
+                            android:textColor="#fff"
+                            android:textSize="14sp"
+                            />
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+
+                            android:id="@+id/start_navi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/map_search_post_poi"
+                            android:text="导航"
+                            android:drawablePadding="4dp"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"/>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color">
+        <include layout="@layout/top_bar"/>
+        <cn.lds.widget.CommonLayout
+            android:id="@+id/feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:content=""
+            app:contentMaxLength="11"
+            app:iconVisiblity="false"
+            app:inputType="number"
+            app:name="意见反馈"
+            app:nameColor="@color/white"
+            android:layout_marginTop="1dp"
+            app:arrowRightVisiblity="true"
+            />
+
+        <cn.lds.widget.CommonLayout
+            android:id="@+id/service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:content=""
+            app:contentMaxLength="11"
+            app:iconVisiblity="false"
+            app:inputType="number"
+            app:nameColor="@color/white"
+            app:name="客服"
+            app:arrowRightVisiblity="true"
+            app:bottomLineVisiblity="false"
+            />
+        <cn.lds.widget.CommonLayout
+            android:id="@+id/help_explain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:content=""
+            app:contentMaxLength="11"
+            app:iconVisiblity="false"
+            app:inputType="number"
+            app:nameColor="@color/white"
+            app:name="帮助说明"
+            app:arrowRightVisiblity="true"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</layout>

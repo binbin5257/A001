@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="cn.lds.common"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--获取网络状态的权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--获取设备信息-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- 获取网络状态的权限 -->
+    <application>
+        <activity android:name=".base.BaseActivity"></activity>
+
+
+        <activity
+            android:name=".photoselector.PickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".photoselector.PreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".photoselector.TakePhotoActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+    </application>
+
+</manifest>

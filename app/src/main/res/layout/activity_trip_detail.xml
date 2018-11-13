@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cn.lds.ui.TripDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/top_bar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.amap.api.maps.MapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="#dd161735"
+                android:layout_alignParentBottom="true">
+                <ImageView
+                    android:id="@+id/iv_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_reasume"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="34dp"
+                    />
+                <ImageView
+                    android:id="@+id/iv_start"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/bg_reasume"
+                    android:layout_toRightOf="@+id/iv_stop"
+                    android:layout_alignTop="@+id/iv_stop"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/tv_prompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="正常速度播放"
+                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/radio_group"
+                    android:layout_alignRight="@+id/radio_group"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:textSize="12sp"/>
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignBottom="@+id/iv_stop"
+                    android:layout_toRightOf="@+id/iv_start"
+                    android:layout_marginRight="28dp"
+                    >
+                    <RadioButton
+                        android:id="@+id/rb_half_speed"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:text="x0.5"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:background="@drawable/radio_speed"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        />
+                    <RadioButton
+                        android:id="@+id/rb_normal_speed"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:text="x1"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/radio_speed"
+                        />
+                    <RadioButton
+                        android:id="@+id/rb_two_speed"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:text="x2"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:background="@drawable/radio_speed"
+                        />
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_trip_start"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/btn_trip_stop"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:text="播放"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_trip_stop"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:onClick="stop"
+                android:text="暂停"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tvtrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

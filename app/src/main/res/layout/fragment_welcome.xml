@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color">
+
+        <ImageView
+            android:id="@+id/welcome_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <RelativeLayout
+            android:id="@+id/rl_count_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:visibility="invisible">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="倒计时"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@+id/time"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                />
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3s"
+                android:textColor="@color/red"
+                android:layout_alignParentRight="true"
+                android:textSize="18sp"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

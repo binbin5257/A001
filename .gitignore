@@ -1,0 +1,16 @@
+*.iml
+.gradle
+.idea/
+.svn/
+.bash_profile
+widget/build
+widget/widget.iml
+common/build
+common/common.iml
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild

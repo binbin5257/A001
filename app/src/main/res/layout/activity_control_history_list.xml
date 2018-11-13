@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="cn.lds.ui.ControlHistoryListActivity">
+
+        <include layout="@layout/top_bar"/>
+
+        <cn.lds.widget.PullToRefreshLayout
+            android:id="@+id/pull_to_refresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <include layout="@layout/pull_head"/>
+
+            <cn.lds.ui.view.CarControlListView
+                android:id="@+id/history_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include layout="@layout/pull_up_footer"/>
+        </cn.lds.widget.PullToRefreshLayout>
+    </LinearLayout>
+</layout>

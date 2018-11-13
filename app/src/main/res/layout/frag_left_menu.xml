@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:gravity="center"
+        android:id="@+id/person_info"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            >
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/bg_avatar"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/bg_headavatar"
+                android:layout_centerInParent="true"
+                app:roundAsCircle="true"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名"
+                android:layout_below="@+id/bg_avatar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/textcolor80"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#CFCFCFCF"
+        />
+
+
+    <ListView
+        android:id="@+id/menu_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:layout_weight="7"
+        />
+</LinearLayout>
